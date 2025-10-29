@@ -1,0 +1,20 @@
+# Dockerfile
+FROM public.ecr.aws/docker/library/python:3.11.6-slim
+
+# Copy the Lambda adapter
+COPY --from=public.ecr.aws/awsguru/aws-lambda-adapter:0.8.1 /lambda-adapter /opt/extensions/lambda-adapter
+
+WORKDIR /var/task
+
+# Install dependencies
+COPY requirements-gradio.txt ./requirements.txt
+RUN python -m pip install -r requirements.txt
+
+# Copy your application code
+COPY ./lib ./lib
+COPY ./prompts.py ./prompts.py
+COPY ./gradio_frontend.py ./gradio_frontend.py
+COPY ./gradio_backend.py ./gradio_backend.py
+COPY ./gradio_main.py ./app.py
+
+CMD ["python3", "app.py"]
