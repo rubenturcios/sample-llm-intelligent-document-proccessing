@@ -4,7 +4,7 @@ A proof-of-concept project demonstrating intelligent document processing for con
 
 ## Overview
 
-This sample project showcases a real-world use case where organizations need to efficiently review and process bid documents for ongoing contracts. The solution leverages AWS infrastructure, OpenSearch for document indexing and retrieval, and LLM capabilities through Amazon Bedrock to provide intelligent document analysis.
+This sample project showcases a real-world use case where an organization needed to efficiently review and process bid documents for ongoing contracts. The solution leverages AWS infrastructure, OpenSearch for document indexing and retrieval, and LLM capabilities through Amazon Bedrock to provide intelligent document analysis.
 
 ## Key Components
 
